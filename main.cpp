@@ -24,17 +24,17 @@ void fastestWay(int a[2][3], int t[2][2], int e[2], int x[2], int longitud){
     f2[0] = e[1] + a[1][0];
 
     for(int j = 1; j<= longitud; j++){
-        if(f1[j-1]+a[1][j] <= f2[j-1]+t[2][j-1]+ a[1][j]){
+        if(f1[j-1]+a[1][j] <= f2[j-1]+t[1][j-1]+ a[1][j]){
             f1[j] = f1[j-1] + a[1][j];
         }
         else{
-            f1[j] = f2[j-1]+t[2][j-1]+ a[1][j];
+            f1[j] = f2[j-1]+t[1][j-1]+ a[1][j];
         }
-        if (f2[j-1] + a[2][j] <= f1[j-1] + t[1][j-1] + a[2][j]){
-            f2[j] = f2[j-1] + a[2][j];
+        if (f2[j-1] + a[1][j] <= f1[j-1] + t[1][j-1] + a[1][j]){
+            f2[j] = f2[j-1] + a[1][j];
         }
         else{
-            f2[j] = f1[j-1] + t[1][j-1] + a[2][j];
+            f2[j] = f1[j-1] + t[1][j-1] + a[1][j];
         }
     }
 
